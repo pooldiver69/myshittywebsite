@@ -8,11 +8,11 @@ router.get('/',function(req, res){
 });
 
 router.get('/signin', function(req, res) {
-  console.log("sign in")
+  res.redirect('/routers/signin');
 })
 
 router.get('/register', function(req, res) {
-  console.log("register")
+  res.redirect('/routers/register');
 })
 
 module.exports = router
