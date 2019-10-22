@@ -10,7 +10,8 @@
     "nodemon": "^1.19.4"
   },
   "scripts": {
-    "watch": "nodemon ./app.js"
+    "watch": "nodemon ./app.js",
+    "start": "node ./app.js"
   },
   "repository": {
     "type": "git",
