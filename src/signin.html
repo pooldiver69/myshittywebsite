@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Sign In</title>
   <link rel="stylesheet" href="/../assets/bootstrap/css/bootstrap.min.css" type='text/css'>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+    type='text/css'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700" type='text/css'>
   <link rel="stylesheet" href="/../assets/fonts/font-awesome.min.css" type='text/css'>
 </head>
+
 <body id="page-top">
-  <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="background-color: black;">
-      <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">MYSHITTYWEBSITE</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false"
-              aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="/signin">SIGN IN</a></li>
-                  <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" href="/register">REGISTER</a></li>
-              </ul>
-          </div>
+  <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav"
+    style="background-color: black;">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">MYSHITTYWEBSITE</a><button
+        data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i
+          class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger"
+              href="/signin">SIGN IN</a></li>
+          <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger"
+              href="/register">REGISTER</a></li>
+        </ul>
       </div>
+    </div>
   </nav>
 
   <div class="card bg-light">
@@ -31,33 +39,33 @@
         <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
       </p>
       <p class="divider-text">
-            <span class="bg-light" style="color: black;">OR</span>
-        </p>
-      <form>
+        <span class="bg-light" style="color: black;">OR</span>
+      </p>
+      <form action='/user/signin/submit' , method="POST">
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
           </div>
-            <input name="" class="form-control" placeholder="Email address" type="email">
+          <input name="email" class="form-control" placeholder="Email address" type="email">
         </div> <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
           </div>
-            <input class="form-control" placeholder="Create password" type="password">
-        </div> <!-- form-group// -->                                    
+          <input name="password" class="form-control" placeholder="Create password" type="password">
+        </div> <!-- form-group// -->
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block"> Sign In </button>
-        </div> <!-- form-group// -->      
-        <p class="text-center" style="color: black;">Don't have an account? <a href="/register">Register</a> </p>                                                                 
-    </form>
+          <button type="submit" value="submit" class="btn btn-primary btn-block"> Sign In </button>
+        </div> <!-- form-group// -->
+        <p class="text-center" style="color: black;">Don't have an account? <a href="/register">Register</a> </p>
+      </form>
     </article>
-    </div> <!-- card.// -->
-    
+  </div> <!-- card.// -->
+
   <footer>
-      <div class="container text-center">
-          <p>Copyright ©&nbsp;Feiyu Cai 2019</p>
-      </div>
+    <div class="container text-center">
+      <p>Copyright ©&nbsp;Feiyu Cai 2019</p>
+    </div>
   </footer>
   <script src="/../assets/js/jquery.min.js"></script>
   <script src="/../assets/bootstrap/js/bootstrap.min.js"></script>
@@ -66,19 +74,21 @@
 </body>
 
 <style>
-.divider-text {
+  .divider-text {
     position: relative;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-.divider-text span {
+  }
+
+  .divider-text span {
     padding: 7px;
     font-size: 12px;
-    position: relative;   
+    position: relative;
     z-index: 2;
-}
-.divider-text:after {
+  }
+
+  .divider-text:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -86,15 +96,17 @@
     top: 55%;
     left: 0;
     z-index: 1;
-}
+  }
 
-.btn-facebook {
+  .btn-facebook {
     background-color: #405D9D;
     color: #fff;
-}
-.btn-twitter {
+  }
+
+  .btn-twitter {
     background-color: #42AEEC;
     color: #fff;
-}
+  }
 </style>
+
 </html>
