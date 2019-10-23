@@ -40,7 +40,6 @@ router.post('/signin/submit', function (req, res) {
       let accessToken = result.getAccessToken().getJwtToken();
       let sess = req.session;
       sess.token = accessToken;
-      console.log(sess.token)
       res.redirect('/main');
     },
     onFailure: function (err) {
@@ -84,5 +83,16 @@ router.post('/register/submit', function (req, res) {
     });
   }
 })
+
+router.get('/logout', function (req, res) {
+  let cognitoUser =  userPool.getCurrentUser();
+  cognitoUser.signOut();
+  req.session.destroy(function(err) {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/');
+  })
+});
 
 module.exports = router
