@@ -4,11 +4,13 @@ const path = require('path')
 global.fetch = require('node-fetch');
 var AmazonCognitoIdentity = require("amazon-cognito-identity-js");
 const config = require('../services/aws')
+const Validate = require('../js/authValidate')
 
 const poolData = {
   UserPoolId: config.cognito.userPoolId,
   ClientId: config.cognito.clientId
 }
+const poolRegion = config.cognito.region;
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 router.get('/signin', function (req, res) {
@@ -36,7 +38,9 @@ router.post('/signin/submit', function (req, res) {
   cognitoUser.authenticateUser(authenticationDetails, {
     onSuccess: function (result) {
       let accessToken = result.getAccessToken().getJwtToken();
-      console.log(accessToken)
+      let sess = req.session;
+      sess.token = accessToken;
+      console.log(sess.token)
       res.redirect('/main');
     },
     onFailure: function (err) {
@@ -76,7 +80,7 @@ router.post('/register/submit', function (req, res) {
       }
       cognitoUser = result.user;
       console.log('user name is ' + cognitoUser.getUsername());
-      res.redirect('/main');
+      res.redirect('/');
     });
   }
 })
